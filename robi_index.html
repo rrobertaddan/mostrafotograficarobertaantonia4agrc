@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHILDREN | Steve McCurry — Museo degli Innocenti</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--bg: #f4f0e9;
+--paper: #fffdf9;
+--dark: #29251f;
+--brown: #79563e;
+--muted: #81796f;
+--line: #ded6ca;
+--serif: 'Playfair Display', Georgia, serif;
+--sans: 'DM Sans', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+margin: 0;
+background: var(--bg);
+color: var(--dark);
+font-family: var(--sans);
+}
+
+button, a { font-family: inherit; }
+
+button { cursor: pointer; }
+
+.topbar {
+background: var(--dark);
+color: white;
+text-align: center;
+padding: 10px;
+font-size: 9px;
+letter-spacing: 2px;
+text-transform: uppercase;
+}
+
+header {
+height: 82px;
+padding: 0 7%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border-bottom: 1px solid var(--line);
+background: var(--bg);
+position: sticky;
+top: 0;
+z-index: 10;
+}
+
+.logo {
+text-decoration: none;
+color: var(--dark);
+font-size: 13px;
+font-weight: 700;
+letter-spacing: 2px;
+}
+
+.logo small {
+display: block;
+color: var(--muted);
+font-size: 8px;
+font-weight: 400;
+margin-top: 5px;
+letter-spacing: 2px;
+}
+
+nav {
+display: flex;
+align-items: center;
+gap: 25px;
+}
+
+nav a {
+text-decoration: none;
+color: var(--dark);
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+nav a:hover { color: var(--brown); }
+
+.btn {
+background: var(--dark);
+color: white;
+border: 1px solid var(--dark);
+padding: 15px 24px;
+font-size: 10px;
+font-weight: 600;
+letter-spacing: 1.4px;
+text-transform: uppercase;
+transition: .2s;
+}
+
+.btn:hover {
+background: var(--brown);
+border-color: var(--brown);
+}
+
+.hero {
+display: grid;
+grid-template-columns: 1fr 1fr;
+min-height: 620px;
+background: #e8e1d6;
+}
+
+.hero-text {
+padding: 80px 10% 80px 14%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.eyebrow {
+color: var(--brown);
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 2.5px;
+text-transform: uppercase;
+}
+
+.hero h1 {
+font-family: var(--serif);
+font-size: clamp(65px, 9vw, 125px);
+line-height: 1;
+font-weight: 400;
+letter-spacing: -5px;
+margin: 25px 0 8px;
+}
+
+.subtitle {
+font-size: 11px;
+letter-spacing: 4px;
+text-transform: uppercase;
+color: #6c6257;
+}
+
+.hero-text p {
+color: #6b6259;
+font-size: 14px;
+line-height: 1.9;
+max-width: 400px;
+margin: 30px 0;
+}
+
+.hero-meta {
+display: flex;
+gap: 30px;
+margin-bottom: 30px;
+}
+
+.hero-meta strong {
+display: block;
+font-size: 10px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.hero-meta span {
+display: block;
+color: var(--muted);
+font-size: 11px;
+margin-top: 6px;
+}
+
+.hero-image {
+min-height: 620px;
+overflow: hidden;
+}
+
+.hero-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.intro {
+background: var(--paper);
+text-align: center;
+padding: 100px 12%;
+}
+
+.intro h2 {
+max-width: 850px;
+margin: 25px auto;
+font: 400 clamp(30px, 4vw, 48px)/1.4 var(--serif);
+}
+
+.intro p {
+max-width: 720px;
+margin: auto;
+color: var(--muted);
+font-size: 13px;
+line-height: 2;
+}
+
+.section {
+padding: 85px 8%;
+}
+
+.section-title {
+font: 400 clamp(32px, 4vw, 48px)/1.3 var(--serif);
+margin: 15px 0 30px;
+}
+
+.gallery {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+}
+
+.gallery img {
+width: 100%;
+height: 390px;
+object-fit: cover;
+}
+
+.gallery figcaption {
+font-size: 9px;
+letter-spacing: 1px;
+color: var(--muted);
+text-transform: uppercase;
+padding-top: 12px;
+}
+
+.gallery figure { margin: 0; }
+
+.statement {
+padding: 80px 12%;
+text-align: center;
+background: var(--dark);
+color: white;
+}
+
+.statement blockquote {
+font: italic 400 clamp(23px, 3.2vw, 37px)/1.6 var(--serif);
+max-width: 850px;
+margin: auto;
+}
+
+.statement p {
+color: #c6b7a5;
+font-size: 9px;
+letter-spacing: 2px;
+margin-top: 25px;
+}
+
+.bio {
+display: grid;
+grid-template-columns: .9fr 1.1fr;
+gap: 8%;
+align-items: center;
+background: #e9e2d8;
+}
+
+.bio img {
+width: 100%;
+height: 480px;
+object-fit: cover;
+}
+
+.bio p, .visit p {
+color: #6d655c;
+font-size: 13px;
+line-height: 2;
+}
+
+.facts {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 18px;
+margin-top: 25px;
+}
+
+.fact {
+border-top: 1px solid #c9beb0;
+padding-top: 12px;
+}
+
+.fact strong {
+display: block;
+font-size: 10px;
+text-transform: uppercase;
+}
+
+.fact span {
+color: var(--muted);
+font-size: 11px;
+}
+
+.visit {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 8%;
+align-items: center;
+background: var(--paper);
+}
+
+.visit-card {
+background: var(--bg);
+padding: 30px;
+}
+
+.visit-row {
+display: flex;
+justify-content: space-between;
+gap: 15px;
+padding: 15px 0;
+border-bottom: 1px solid var(--line);
+font-size: 11px;
+}
+
+.visit-row strong {
+font-size: 9px;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+.visit-row span {
+text-align: right;
+color: #6c6257;
+}
+
+.cta {
+background: #ded3c5;
+padding: 65px 8%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 25px;
+}
+
+.cta h2 {
+font: 400 35px var(--serif);
+margin: 0;
+}
+
+footer {
+padding: 35px 7%;
+background: var(--dark);
+color: #eee6dc;
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 15px;
+font-size: 9px;
+letter-spacing: 1px;
+}
+
+/* BIGLIETTERIA */
+
+#booking {
+display: none;
+min-height: 100vh;
+background: var(--bg);
+}
+
+#booking.active { display: block; }
+#home.hidden { display: none; }
+
+.booking-header {
+height: 75px;
+padding: 0 7%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid var(--line);
+}
+
+.back {
+border: 0;
+background: none;
+font-size: 10px;
+font-weight: 700;
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+
+.booking-main {
+max-width: 1100px;
+margin: 55px auto;
+padding: 0 22px 60px;
+}
+
+.booking-heading {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.booking-heading h1 {
+font: 400 48px var(--serif);
+margin: 15px 0;
+}
+
+.booking-heading p {
+color: var(--muted);
+font-size: 12px;
+}
+
+.booking-layout {
+display: grid;
+grid-template-columns: 1.2fr .8fr;
+gap: 22px;
+align-items: start;
+}
+
+.panel {
+background: var(--paper);
+border: 1px solid var(--line);
+padding: 28px;
+}
+
+.panel-title {
+font-size: 10px;
+letter-spacing: 1.7px;
+text-transform: uppercase;
+margin: 0 0 22px;
+}
+
+.calendar-head {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 15px;
+}
+
+.calendar-head strong {
+font: 400 17px var(--serif);
+}
+
+.calendar-head button {
+width: 34px;
+height: 34px;
+border: 1px solid var(--line);
+background: transparent;
+}
+
+.weekdays, .days {
+display: grid;
+grid-template-columns: repeat(7, 1fr);
+gap: 6px;
+text-align: center;
+}
+
+.weekdays span {
+font-size: 8px;
+color: var(--muted);
+padding: 10px 0;
+}
+
+.day {
+aspect-ratio: 1;
+border: 0;
+background: #eee9e1;
+color: var(--dark);
+font-size: 11px;
+}
+
+.day:disabled {
+opacity: .2;
+cursor: not-allowed;
+}
+
+.day.selected, .day:hover:not(:disabled) {
+background: var(--dark);
+color: white;
+}
+
+.help {
+font-size: 10px;
+color: var(--muted);
+margin-top: 14px;
+line-height: 1.7;
+}
+
+.ticket-list { margin-top: 30px; }
+
+.ticket {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 12px;
+padding: 15px 0;
+border-bottom: 1px solid var(--line);
+}
+
+.ticket-name {
+font-size: 12px;
+font-weight: 600;
+}
+
+.ticket-desc {
+display: block;
+font-size: 10px;
+color: var(--muted);
+margin-top: 5px;
+}
+
+.price {
+font-size: 11px;
+font-weight: 700;
+white-space: nowrap;
+}
+
+.quantity {
+display: flex;
+gap: 12px;
+align-items: center;
+margin-top: 9px;
+}
+
+.quantity button {
+width: 26px;
+height: 26px;
+border: 1px solid var(--line);
+background: transparent;
+font-size: 15px;
+}
+
+.quantity output {
+min-width: 12px;
+text-align: center;
+font-size: 11px;
+}
+
+.summary {
+position: sticky;
+top: 95px;
+}
+
+.summary-row {
+display: flex;
+justify-content: space-between;
+gap: 12px;
+padding: 10px 0;
+font-size: 11px;
+color: #6c6257;
+}
+
+.summary-row strong { color: var(--dark); }
+
+.summary-items {
+background: var(--bg);
+padding: 15px;
+margin-top: 15px;
+}
+
+.total {
+border-top: 1px solid var(--line);
+margin-top: 12px;
+padding-top: 17px;
+font-size: 16px;
+font-weight: 700;
+}
+
+.continue {
+width: 100%;
+margin-top: 20px;
+}
+
+.message {
+display: none;
+padding: 12px;
+margin-top: 12px;
+background: #eee4d8;
+color: #714d37;
+font-size: 11px;
+line-height: 1.6;
+}
+
+.message.show { display: block; }
+
+.success {
+display: none;
+background: var(--paper);
+padding: 50px 25px;
+text-align: center;
+border: 1px solid var(--line);
+}
+
+.success.show { display: block; }
+
+.success h2 {
+font: 400 37px var(--serif);
+}
+
+.success p {
+color: var(--muted);
+font-size: 12px;
+line-height: 1.8;
+}
+
+.disclaimer {
+color: var(--muted);
+font-size: 10px;
+line-height: 1.7;
+margin-top: 18px;
+}
+
+@media(max-width:800px) {
+header { padding: 0 5%; }
+nav { gap: 12px; }
+nav a:not(.nav-ticket) { display: none; }
+.hero { grid-template-columns: 1fr; }
+.hero-text { padding: 60px 8%; }
+.hero-image { min-height: 440px; }
+.bio, .visit { grid-template-columns: 1fr; }
+.booking-layout { grid-template-columns: 1fr; }
+.summary { position: static; }
+.cta { flex-direction: column; align-items: flex-start; }
+}
+
+@media(max-width:500px) {
+.hero h1 { font-size: 72px; }
+.gallery { grid-template-columns: 1fr 1fr; }
+.gallery img { height: 240px; }
+.gallery figure:last-child { display: none; }
+.intro { padding: 70px 8%; }
+.section { padding: 65px 7%; }
+.booking-heading h1 { font-size: 35px; }
+.panel { padding: 18px; }
+}
+</style>
+</head>
+
+<body>
+
+<div id="home">
+
+<div class="topbar">Museo degli Innocenti · Firenze</div>
+
+<header>
+<a class="logo" href="#mostra">MUSEO DEGLI INNOCENTI
+<small>FIRENZE - DAL 1419</small>
+</a>
+
+<nav>
+<a href="#mostra">La mostra</a>
+<a href="#fotografie">Fotografie</a>
+<a href="#fotografo">Il fotografo</a>
+<a href="#visita">Informazioni</a>
+<button class="btn" onclick="openBooking()">Biglietti</button>
+</nav>
+</header>
+
+<main>
+
+<section class="hero" id="mostra">
+<div class="hero-text">
+<div class="eyebrow">Una mostra fotografica di Steve McCurry</div>
+<h1>CHILDREN</h1>
+<div class="subtitle">The world through their eyes</div>
+
+<p>
+Un viaggio attraverso lo sguardo dei bambini.
+Immagini che raccontano l’infanzia nelle sue molteplici
+realtà, tra gioco, quotidianità, fragilità e speranza.
+</p>
+
+<div class="hero-meta">
+<div>
+<strong>19 maggio — 8 ottobre 2025</strong>
+<span>Piazza SS. Annunziata 13, Firenze - Italia</span>
+</div>
+<div>
+<strong>Steve McCurry</strong>
+<span>Fotografia contemporanea</span>
+</div>
+</div>
+
+<div>
+<button class="btn" onclick="openBooking()">Acquista il biglietto ↗</button>
+</div>
+</div>
+
+<div class="hero-image">
+<img src="https://images.squarespace-cdn.com/content/v1/64ee3953126c653b251cff47/1693333897405-5W789B2ODT2SQX9UHNT2/ITALY-10049.jpg"
+alt="Fotografia dal portfolio di Steve McCurry">
+</div>
+</section>
+
+<section class="intro">
+<div class="eyebrow">Il progetto espositivo</div>
+
+<h2>
+L’infanzia è un universo di storie,
+emozioni e possibilità.
+</h2>
+
+<p>
+Con CHILDREN, Steve McCurry rivolge il proprio obiettivo
+ai bambini incontrati nel corso dei suoi viaggi.
+Le fotografie compongono un racconto visivo che supera
+confini geografici e culturali e restituisce la complessità
+dell’essere bambini in ogni parte del mondo.
+</p>
+</section>
+
+<section class="section" id="fotografie">
+<div class="eyebrow">La selezione fotografica</div>
+<h2 class="section-title">Un mondo, tanti sguardi.</h2>
+
+<div class="gallery">
+<figure>
+<img src="https://images.squarespace-cdn.com/content/v1/64ee3953126c653b251cff47/1693333897405-5W789B2ODT2SQX9UHNT2/ITALY-10049.jpg" alt="Fotografia di Steve McCurry">
+<figcaption>Volti e identità · © Steve McCurry</figcaption>
+</figure>
+
+<figure>
+<img src="https://images.squarespace-cdn.com/content/v1/64ee3953126c653b251cff47/1693333897405-5W789B2ODT2SQX9UHNT2/ITALY-10049.jpg" alt="Fotografia della mostra">
+<figcaption>Storie quotidiane · © Steve McCurry</figcaption>
+</figure>
+
+<figure>
+<img src="https://images.squarespace-cdn.com/content/v1/64ee3953126c653b251cff47/1693333897405-5W789B2ODT2SQX9UHNT2/ITALY-10049.jpg" alt="Uno sguardo dell'infanzia">
+<figcaption>Lo sguardo · © Steve McCurry</figcaption>
+</figure>
+</div>
+
+<section class="statement">
+<blockquote>
+Attraverso i loro occhi possiamo riconoscere quanto
+le nostre storie siano diverse e, allo stesso tempo,
+profondamente vicine.
+</blockquote>
+<p>CHILDREN · STEVE McCURRY</p>
+</section>
+
+<section class="section bio" id="fotografo">
+<div>
+<img src="https://images.squarespace-cdn.com/content/v1/64ee3953126c653b251cff47/1693333897405-5W789B2ODT2SQX9UHNT2/ITALY-10049.jpg"
+alt="Fotografia dal portfolio di Steve McCurry">
+</div>
+
+<div>
+<div class="eyebrow">Il fotografo</div>
+<h2 class="section-title">Steve McCurry.<br>La forza di uno sguardo.</h2>
+
+<p>
+Steve McCurry (Philadelphia, 1950) è uno dei più noti
+fotografi contemporanei. Dopo gli studi alla Pennsylvania
+State University, intraprende la carriera di fotoreporter
+e viaggia in numerosi Paesi, documentando conflitti,
+culture, tradizioni e momenti di vita quotidiana.
+</p>
+
+<p>
+È conosciuto a livello internazionale per il ritratto
+Afghan Girl, pubblicato sulla copertina di National Geographic
+nel 1985. Il suo lavoro è caratterizzato da un uso intenso
+del colore e dalla capacità di instaurare un rapporto diretto
+con i soggetti fotografati.
+</p>
+
+<div class="facts">
+<div class="fact"><strong>1950</strong><span>Nasce a Philadelphia</span></div>
+<div class="fact"><strong>1985</strong><span>Il ritratto Afghan Girl</span></div>
+<div class="fact"><strong>Fotoreportage</strong><span>Oltre quattro decenni di viaggi</span></div>
+<div class="fact"><strong>Nel mondo</strong><span>Culture, persone e storie</span></div>
+</div>
+</div>
+</section>
+
+<section class="section visit" id="visita">
+<div>
+<div class="eyebrow">La sede espositiva</div>
+<h2 class="section-title">Un luogo simbolo, una mostra sull’infanzia.</h2>
+
+<p>
+La mostra è ambientata negli spazi del Museo degli Innocenti,
+istituzione fiorentina la cui storia è legata da oltre sei
+secoli all’accoglienza e alla tutela dei bambini.
+Il contesto dialoga con il tema dell’esposizione e invita
+a osservare l’infanzia con attenzione e consapevolezza.
+</p>
+
+<button class="btn" onclick="openBooking()">Prenota la visita ↗</button>
+</div>
+
+<div class="visit-card">
+<div class="eyebrow">Informazioni per la visita</div>
+
+<div class="visit-row">
+<strong>Mostra</strong>
+<span>CHILDREN — Steve McCurry</span>
+</div>
+
+<div class="visit-row">
+<strong>Date</strong>
+<span>19 maggio — 8 ottobre 2025</span>
+</div>
+
+<div class="visit-row">
+<strong>Orari</strong>
+<span>Tutti i giorni · 10:00–19:00</span>
+</div>
+
+<div class="visit-row">
+<strong>Sede</strong>
+<span>Museo degli Innocenti</span>
+</div>
+
+<div class="visit-row">
+<strong>Indirizzo</strong>
+<span>Piazza Santissima Annunziata, 13<br>50122 Firenze</span>
+</div>
+
+<div class="visit-row">
+<strong> pagina curata da </strong>
+<span> Roberta Antonia Rat 4^A GRF </span>
+</div>
+
+<p class="help">
+Date, orari e tariffe sono impostati per questa presentazione dimostrativa.
+</p>
+</div>
+</section>
+
+<section class="cta">
+<div>
+<h2>Scopri le storie dietro ogni sguardo.</h2>
+<p>Consulta le tariffe e seleziona la data della tua visita.</p>
+</div>
+<button class="btn" onclick="openBooking()">Accedi alla biglietteria ↗</button>
+</section>
+
+</main>
+
+<footer>
+<span>CHILDREN — STEVE McCURRY</span>
+<span>MUSEO DEGLI INNOCENTI · FIRENZE</span>
+<span>© Progetto espositivo</span>
+</footer>
+</div>
+
+<!-- SCHERMATA BIGLIETTERIA -->
+
+<section id="booking">
+
+<div class="booking-header">
+<a class="logo" href="#" onclick="closeBooking();return false">
+CHILDREN
+<small>STEVE McCURRY · FIRENZE</small>
+</a>
+
+<button class="back" onclick="closeBooking()">← Torna alla mostra</button>
+</div>
+
+<main class="booking-main">
+
+<div class="booking-heading">
+<div class="eyebrow">Biglietteria</div>
+<h1>Pianifica la tua visita.</h1>
+<p>Seleziona la data e il numero di ingressi.</p>
+</div>
+
+<div class="booking-layout" id="bookingLayout">
+
+<section class="panel">
+
+<h2 class="panel-title">01 — Seleziona una data</h2>
+
+<div class="calendar-head">
+<button onclick="changeMonth(-1)" aria-label="Mese precedente">‹</button>
+<strong id="monthLabel"></strong>
+<button onclick="changeMonth(1)" aria-label="Mese successivo">›</button>
+</div>
+
+<div class="weekdays">
+<span>LUN</span><span>MAR</span><span>MER</span>
+<span>GIO</span><span>VEN</span><span>SAB</span><span>DOM</span>
+</div>
+
+<div class="days" id="calendarDays"></div>
+
+<p class="help">Periodo selezionabile: dal 19 maggio all’8 ottobre 2025.</p>
+
+<div class="ticket-list">
+<h2 class="panel-title">02 — Scegli i biglietti</h2>
+<div id="ticketTypes"></div>
+</div>
+
+</section>
+
+<aside class="panel summary">
+
+<h2 class="panel-title">Riepilogo ordine</h2>
+
+<div class="summary-row">
+<span>Mostra</span>
+<strong>CHILDREN</strong>
+</div>
+
+<div class="summary-row">
+<span>Data</span>
+<strong id="selectedDate">Da selezionare</strong>
+</div>
+
+<div class="summary-row">
+<span>Numero ingressi</span>
+<strong id="ticketCount">0</strong>
+</div>
+
+<div class="summary-items" id="summaryItems">
+Nessun biglietto selezionato
+</div>
+
+<div class="summary-row total">
+<span>Totale</span>
+<strong id="total">€ 0,00</strong>
+</div>
+
+<button class="btn continue" onclick="confirmBooking()">
+Procedi →
+</button>
+
+<div class="message" id="bookingMessage"></div>
+
+<p class="disclaimer">
+Non vengono effettuati pagamenti e non vengono generati
+biglietti validi.
+</p>
+
+</aside>
+</div>
+
+<div class="success" id="successPanel">
+<div class="eyebrow">Riepilogo completato</div>
+<h2>La tua visita è pronta.</h2>
+<p>
+Hai completato la prenotazione
+per CHILDREN — Steve McCurry.<br>
+</p>
+<button class="btn" onclick="closeBooking()">Torna alla mostra</button>
+</div>
+
+</main>
+</section>
+
+<script>
+const tickets = [
+{name:"Intero", desc:"Biglietto adulto", price:18},
+{name:"Under 24", desc:"Visitatori fino a 23 anni", price:7},
+{name:"Bambini", desc:"Ingresso gratuito", price:0},
+{name:"Persone con disabilità", desc:"Ingresso gratuito", price:0},
+{name:"Accompagnatore", desc:"Accompagnatore di persona con disabilità", price:0}
+];
+
+let quantities = [0,0,0,0,0];
+let selectedDate = null;
+let currentMonth = new Date(2025,4,1);
+
+const startDate = new Date(2025,4,19);
+const endDate = new Date(2025,9,8);
+
+function euro(value) {
+return "€ " + value.toFixed(2).replace(".",",");
+}
+
+function openBooking() {
+document.getElementById("home").classList.add("hidden");
+document.getElementById("booking").classList.add("active");
+window.scrollTo(0,0);
+renderCalendar();
+renderTickets();
+updateSummary();
+}
+
+function closeBooking() {
+document.getElementById("booking").classList.remove("active");
+document.getElementById("home").classList.remove("hidden");
+document.getElementById("bookingLayout").style.display = "grid";
+document.getElementById("successPanel").classList.remove("show");
+document.getElementById("bookingMessage").classList.remove("show");
+window.scrollTo(0,0);
+}
+
+function changeMonth(amount) {
+const next = new Date(
+currentMonth.getFullYear(),
+currentMonth.getMonth() + amount,
+1
+);
+
+if (
+next < new Date(2025,4,1) ||
+next > new Date(2025,9,1)
+) return;
+
+currentMonth = next;
+renderCalendar();
+}
+
+function renderCalendar() {
+const label = currentMonth.toLocaleDateString("it-IT", {
+month:"long",
+year:"numeric"
+});
+
+document.getElementById("monthLabel").textContent =
+label.charAt(0).toUpperCase() + label.slice(1);
+
+const grid = document.getElementById("calendarDays");
+grid.innerHTML = "";
+
+const offset =
+(new Date(
+currentMonth.getFullYear(),
+currentMonth.getMonth(),
+1
+).getDay() + 6) % 7;
+
+const totalDays = new Date(
+currentMonth.getFullYear(),
+currentMonth.getMonth()+1,
+0
+).getDate();
+
+for (let i=0; i<offset; i++) {
+grid.appendChild(document.createElement("span"));
+}
+
+for (let day=1; day<=totalDays; day++) {
+const date = new Date(
+currentMonth.getFullYear(),
+currentMonth.getMonth(),
+day
+);
+
+const button = document.createElement("button");
+button.type = "button";
+button.className = "day";
+button.textContent = day;
+
+button.disabled = date < startDate || date > endDate;
+
+if (
+selectedDate &&
+date.toDateString() === selectedDate.toDateString()
+) {
+button.classList.add("selected");
+}
+
+button.onclick = function() {
+selectedDate = date;
+renderCalendar();
+updateSummary();
+};
+
+grid.appendChild(button);
+}
+}
+
+function renderTickets() {
+const container = document.getElementById("ticketTypes");
+container.innerHTML = "";
+
+tickets.forEach((ticket,index) => {
+const row = document.createElement("div");
+row.className = "ticket";
+
+const left = document.createElement("div");
+
+const name = document.createElement("div");
+name.className = "ticket-name";
+name.textContent = ticket.name;
+
+const desc = document.createElement("span");
+desc.className = "ticket-desc";
+desc.textContent = ticket.desc;
+
+const controls = document.createElement("div");
+controls.className = "quantity";
+
+const minus = document.createElement("button");
+minus.textContent = "−";
+minus.type = "button";
+minus.setAttribute("aria-label","Rimuovi " + ticket.name);
+minus.onclick = () => changeQuantity(index,-1);
+
+const number = document.createElement("output");
+number.id = "quantity" + index;
+number.textContent = quantities[index];
+
+const plus = document.createElement("button");
+plus.textContent = "+";
+plus.type = "button";
+plus.setAttribute("aria-label","Aggiungi " + ticket.name);
+plus.onclick = () => changeQuantity(index,1);
+
+controls.append(minus,number,plus);
+left.append(name,desc,controls);
+
+const price = document.createElement("div");
+price.className = "price";
+price.textContent = ticket.price === 0
+? "GRATUITO"
+: euro(ticket.price);
+
+row.append(left,price);
+container.appendChild(row);
+});
+}
+
+function changeQuantity(index,amount) {
+quantities[index] = Math.max(
+0,
+quantities[index] + amount
+);
+
+document.getElementById("quantity"+index).textContent =
+quantities[index];
+
+updateSummary();
+}
+
+function updateSummary() {
+const count = quantities.reduce((a,b) => a+b,0);
+
+const total = quantities.reduce(
+(sum,quantity,index) =>
+sum + quantity*tickets[index].price,
+0
+);
+
+document.getElementById("selectedDate").textContent =
+selectedDate
+? selectedDate.toLocaleDateString("it-IT", {
+day:"2-digit",
+month:"long",
+year:"numeric"
+})
+: "Da selezionare";
+
+document.getElementById("ticketCount").textContent = count;
+document.getElementById("total").textContent = euro(total);
+
+const box = document.getElementById("summaryItems");
+box.innerHTML = "";
+
+let hasTickets = false;
+
+tickets.forEach((ticket,index) => {
+if (quantities[index] > 0) {
+hasTickets = true;
+
+const row = document.createElement("div");
+row.className = "summary-row";
+
+const label = document.createElement("span");
+label.textContent =
+ticket.name + " × " + quantities[index];
+
+const price = document.createElement("strong");
+price.textContent =
+euro(ticket.price * quantities[index]);
+
+row.append(label,price);
+box.appendChild(row);
+}
+});
+
+if (!hasTickets) {
+box.textContent = "Nessun biglietto selezionato";
+}
+}
+
+function confirmBooking() {
+const message = document.getElementById("bookingMessage");
+
+if (!selectedDate) {
+message.textContent =
+"Seleziona una data dal calendario per continuare.";
+message.classList.add("show");
+return;
+}
+
+if (quantities.reduce((a,b) => a+b,0) === 0) {
+message.textContent =
+"Seleziona almeno un biglietto per continuare.";
+message.classList.add("show");
+return;
+}
+
+message.classList.remove("show");
+
+document.getElementById("bookingLayout").style.display = "none";
+document.getElementById("successPanel").classList.add("show");
+
+window.scrollTo(0,0);
+}
+
+renderCalendar();
+renderTickets();
+updateSummary();
+</script>
+
+</body>
+</html>
+
+
